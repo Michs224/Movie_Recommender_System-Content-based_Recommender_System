@@ -25,16 +25,16 @@ def recommend(movie):
     return recommend_movies,recommend_poster
 
 
-with open(r"C:/Users/user/Python/Projects/Movie Recommender System/Model/movieLists.pkl","rb") as f:
+with open("./movieLists.pkl","rb") as f:
     movies=joblib.load(f)
     
-with open(r"C:/Users/user/Python/Projects/Movie Recommender System/Model/similarity.pkl","rb") as f:
+with open("./similarity.pkl","rb") as f:
     similarity=joblib.load(f)
     
     
 import streamlit.components.v1 as components
 
-imageCarouselComponent = components.declare_component("image-carousel-component", path=r"C:\Users\user\Python\Projects\Movie Recommender System\Model\frontend\public")
+imageCarouselComponent = components.declare_component("image-carousel-component", path="./frontend/public")
 
 
 imageUrls = [
