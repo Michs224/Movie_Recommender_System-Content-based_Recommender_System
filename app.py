@@ -25,10 +25,10 @@ def recommend(movie):
     return recommend_movies,recommend_poster
 
 
-with open("movieLists.pkl","rb") as f:
+with open("./movieLists.pkl","rb") as f:
     movies=joblib.load(f)
     
-with open("similarity.pkl","rb") as f:
+with open("./similarity.pkl","rb") as f:
     similarity=joblib.load(f)
     
     
