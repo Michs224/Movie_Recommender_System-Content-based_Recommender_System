@@ -34,7 +34,7 @@ with open("similarity.pkl","rb") as f:
     
 import streamlit.components.v1 as components
 
-imageCarouselComponent = components.declare_component("image-carousel-component", path=r"frontend\public")
+imageCarouselComponent = components.declare_component("image-carousel-component", path="frontend\public")
 
 
 imageUrls = [
