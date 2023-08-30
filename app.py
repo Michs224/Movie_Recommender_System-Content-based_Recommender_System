@@ -24,6 +24,9 @@ def recommend(movie):
         recommend_poster.append(fetch_poster(movies_id))
     return recommend_movies,recommend_poster
 
+with open("movieLists.pkl","rb") as f:
+    movies=joblib.load(f)
+
 # Dapatkan URL objek dari S3
 s3_url = "https://similaritymovierecommendersystem.s3.eu-north-1.amazonaws.com/similarity.pkl"
 
