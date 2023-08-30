@@ -29,7 +29,7 @@ import gdown
 with open("./movieLists.pkl","rb") as f:
     movies=joblib.load(f)
 
-similarity_url = "YOUR_GOOGLE_DRIVE_URL_FOR_SIMILARITY"
+similarity_url = "https://drive.google.com/file/d/1K7OaDmu2zmu3APJxCGN1knCODDicywM4/view?usp=sharing"
 similarity_output = "similarity.pkl"
 gdown.download(similarity_url, similarity_output, quiet=False)
 
