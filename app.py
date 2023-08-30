@@ -25,17 +25,17 @@ def recommend(movie):
     return recommend_movies,recommend_poster
 
 # Download similarity model from OneDrive
-similarity_url = "https://1drv.ms/u/s!AtZije5dMRURhQjLhw5VN2gNP4Eg?e=SfWwJm"
+similarity_url = "https://1drv.ms/f/s!AtZije5dMRURhFkcQBvVyqppTGrO?e=c1zDJv"
 response = requests.get(similarity_url)
 with open("similarity.pkl", "wb") as model_file:
     model_file.write(response.content)
 
 # Load movies data from movieLists.pkl
-with open("./movieLists.pkl", "rb") as f:
+with open("movieLists.pkl", "rb") as f:
     movies = joblib.load(f)
 
 # Load similarity model
-with open("./similarity.pkl", "rb") as f:
+with open("similarity.pkl", "rb") as f:
     similarity = joblib.load(f)  
     
 import streamlit.components.v1 as components
