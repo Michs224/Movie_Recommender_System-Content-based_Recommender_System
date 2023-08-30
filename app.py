@@ -25,7 +25,7 @@ def recommend(movie):
     return recommend_movies,recommend_poster
 
 # Download similarity model from OneDrive
-similarity_url = "https://1drv.ms/f/s!AtZije5dMRURhFkcQBvVyqppTGrO?e=c1zDJv"
+similarity_url = "https://onedrive.live.com/?authkey=%21AIrWwAm%2Dbo7J8HM&cid=1115315DEE8D62D6&id=1115315DEE8D62D6%21648&parId=1115315DEE8D62D6%21601&o=OneUp"
 response = requests.get(similarity_url)
 with open("similarity.pkl", "wb") as model_file:
     model_file.write(response.content)
