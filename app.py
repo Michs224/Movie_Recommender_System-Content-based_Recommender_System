@@ -24,21 +24,17 @@ def recommend(movie):
         recommend_poster.append(fetch_poster(movies_id))
     return recommend_movies,recommend_poster
 
-import gdown
+# Dapatkan URL objek dari S3
+s3_url = "https://similaritymovierecommendersystem.s3.eu-north-1.amazonaws.com/similarity.pkl"
 
-with open("./movieLists.pkl","rb") as f:
-    movies=joblib.load(f)
+# Unduh model similarity dari URL S3
+response = requests.get(s3_url)
+with open("similarity.pkl", "wb") as f:
+    f.write(response.content)
 
-similarity_url = "https://drive.google.com/file/d/1K7OaDmu2zmu3APJxCGN1knCODDicywM4/view?usp=sharing"
-similarity_output = "similarity.pkl"
-gdown.download(similarity_url, similarity_output, quiet=False)
-
-with open(similarity_output, "rb") as f:
-    similarity = joblib.load(f)
-
-# with open("./similarity.pkl","rb") as f:
-#     similarity=joblib.load(f)
-    
+# Muat model similarity
+with open("similarity.pkl", "rb") as f:
+    similarity_model = joblib.load(f)
     
 import streamlit.components.v1 as components
 
