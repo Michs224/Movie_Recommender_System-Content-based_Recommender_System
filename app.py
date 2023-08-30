@@ -24,12 +24,20 @@ def recommend(movie):
         recommend_poster.append(fetch_poster(movies_id))
     return recommend_movies,recommend_poster
 
+import gdown
 
 with open("./movieLists.pkl","rb") as f:
     movies=joblib.load(f)
-    
-with open("./similarity.pkl","rb") as f:
-    similarity=joblib.load(f)
+
+similarity_url = "YOUR_GOOGLE_DRIVE_URL_FOR_SIMILARITY"
+similarity_output = "similarity.pkl"
+gdown.download(similarity_url, similarity_output, quiet=False)
+
+with open(similarity_output, "rb") as f:
+    similarity = joblib.load(f)
+
+# with open("./similarity.pkl","rb") as f:
+#     similarity=joblib.load(f)
     
     
 import streamlit.components.v1 as components
