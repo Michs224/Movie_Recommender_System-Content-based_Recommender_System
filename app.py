@@ -40,34 +40,33 @@ with open("./similarity.pkl", "wb") as f:
 with open("./similarity.pkl", "rb") as f:
     similarity_model = joblib.load(f)
     
-import streamlit.components.v1 as components
+# import streamlit.components.v1 as components
 
-imageCarouselComponent = components.declare_component("image-carousel-component", path="./frontend/public")
-
-
-imageUrls = [
-    fetch_poster(19995),
-    fetch_poster(299536),
-    fetch_poster(580489),
-    fetch_poster(122),
-    fetch_poster(429422),
-    fetch_poster(2830),
-    fetch_poster(9722),
-    fetch_poster(363088),
-    fetch_poster(240),
-    fetch_poster(155),
-    fetch_poster(598),
-    fetch_poster(914),
-    fetch_poster(255709),
-    fetch_poster(572154)
-    ]
+# imageCarouselComponent = components.declare_component("image-carousel-component", path="./frontend/public")
 
 
-imageCarouselComponent(imageUrls=imageUrls, height=200)    
+# imageUrls = [
+#     fetch_poster(19995),
+#     fetch_poster(299536),
+#     fetch_poster(580489),
+#     fetch_poster(122),
+#     fetch_poster(429422),
+#     fetch_poster(2830),
+#     fetch_poster(9722),
+#     fetch_poster(363088),
+#     fetch_poster(240),
+#     fetch_poster(155),
+#     fetch_poster(598),
+#     fetch_poster(914),
+#     fetch_poster(255709),
+#     fetch_poster(572154)
+#     ]
+
+
+# imageCarouselComponent(imageUrls=imageUrls, height=200)    
     
 # listMovies=movies["title"].values
 selectvalue=st.selectbox("Select Movie from Dropdown",movies["title"])
-
 
 if st.button("Show Recommend"):
     movie_names,movie_posters=recommend(selectvalue)
