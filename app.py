@@ -24,6 +24,12 @@ def recommend(movie):
         recommend_poster.append(fetch_poster(movies_id))
     return recommend_movies,recommend_poster
 
+
+s3_urll="https://similaritymovierecommendersystem.s3.eu-north-1.amazonaws.com/movieLists.pkl"
+response = requests.get(s3_urll)
+with open("./movieLists.pkl", "wb") as f:
+    f.write(response.content)
+
 with open("./movieLists.pkl","rb") as f:
     movies=joblib.load(f)
 
