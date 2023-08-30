@@ -24,7 +24,7 @@ def recommend(movie):
         recommend_poster.append(fetch_poster(movies_id))
     return recommend_movies,recommend_poster
 
-with open("movieLists.pkl","rb") as f:
+with open("./movieLists.pkl","rb") as f:
     movies=joblib.load(f)
 
 # Dapatkan URL objek dari S3
@@ -32,11 +32,11 @@ s3_url = "https://similaritymovierecommendersystem.s3.eu-north-1.amazonaws.com/s
 
 # Unduh model similarity dari URL S3
 response = requests.get(s3_url)
-with open("similarity.pkl", "wb") as f:
+with open("./similarity.pkl", "wb") as f:
     f.write(response.content)
 
 # Muat model similarity
-with open("similarity.pkl", "rb") as f:
+with open("./similarity.pkl", "rb") as f:
     similarity_model = joblib.load(f)
     
 import streamlit.components.v1 as components
