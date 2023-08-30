@@ -24,27 +24,14 @@ def recommend(movie):
         recommend_poster.append(fetch_poster(movies_id))
     return recommend_movies,recommend_poster
 
-import io
 
-# # Download similarity model from OneDrive
-# similarity_url = "https://1drv.ms/u/s!AtZije5dMRURhQiK1sAJvm6OyfBz?e=zmh6bI"
-# response = requests.get(similarity_url)
-# with open("similarity.pkl", "wb") as model_file:
-#     model_file.write(response.content)
-
-# Load movies data from movieLists.pkl
-with open("movieLists.pkl", "rb") as f:
-    movies = joblib.load(f)
-
-# Load similarity model
-# with open("similarity.pkl", "rb") as f:
-#     similarity = joblib.load(f)  
-
-# Load similarity model
-similarity_url = "https://onedrive.live.com/?authkey=%21AIrWwAm%2Dbo7J8HM&cid=1115315DEE8D62D6&id=1115315DEE8D62D6%21648&parId=1115315DEE8D62D6%21601&o=OneUp"
-response = requests.get(similarity_url)
-similarity = joblib.load(io.BytesIO(response.content))
-
+with open("./movieLists.pkl","rb") as f:
+    movies=joblib.load(f)
+    
+with open("./similarity.pkl","rb") as f:
+    similarity=joblib.load(f)
+    
+    
 import streamlit.components.v1 as components
 
 imageCarouselComponent = components.declare_component("image-carousel-component", path="./frontend/public")
