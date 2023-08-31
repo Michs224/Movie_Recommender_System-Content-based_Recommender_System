@@ -1,0 +1,4 @@
+Use this link: https://drive.google.com/file/d/1K7OaDmu2zmu3APJxCGN1knCODDicywM4/view?usp=drive_link
+to download similarity.pkl which will be used in this project.
+
+"Note: put this similarity.pkl in the same folder as the movieLists.pkl file and other files"
