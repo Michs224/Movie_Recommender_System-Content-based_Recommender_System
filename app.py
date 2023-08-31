@@ -65,8 +65,8 @@ with open("similarity.pkl", "rb") as f:
 
 # imageCarouselComponent(imageUrls=imageUrls, height=200)    
     
-# listMovies=movies["title"].values
-selectvalue=st.selectbox("Select Movie from Dropdown",movies["title"])
+listMovies=movies["title"].values
+selectvalue=st.selectbox("Select Movie from Dropdown",listMovies)
 
 if st.button("Show Recommend"):
     movie_names,movie_posters=recommend(selectvalue)
