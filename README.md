@@ -4,4 +4,4 @@
 
 This ML project utilizes a Content-Based Recommender System for movies, incorporating features like titles, genres, and posters to offer recommendations based on the chosen film. The system employs cosine similarity to gauge similarities between movies and is deployed using the Streamlit platform, enabling user-friendly interaction.
 
-#### Deployed using Streamlit: https://movierecommendersystem-content-basedrecommendersystem-2vcps55h.streamlit.app/
+#### Deployed using Streamlit: https://movierecommendersystem-content-basedrecommendersystem.streamlit.app/
