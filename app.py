@@ -28,7 +28,7 @@ def recommend(movie):
 with open("movieLists.pkl","rb") as f:
     movies=joblib.load(f)
 
-# Dapatkan URL objek dari S3
+# URL cosine_similarity
 s3_url = "https://similaritymovierecommendersystem.s3.eu-north-1.amazonaws.com/similarity.pkl"
 
 # Download cosine_similarity
