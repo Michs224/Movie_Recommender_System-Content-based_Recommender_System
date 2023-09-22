@@ -31,12 +31,12 @@ with open("movieLists.pkl","rb") as f:
 # Dapatkan URL objek dari S3
 s3_url = "https://similaritymovierecommendersystem.s3.eu-north-1.amazonaws.com/similarity.pkl"
 
-# Unduh model similarity dari URL S3
+# Download cosine_similarity
 response = requests.get(s3_url)
 with open("similarity.pkl", "wb") as f:
     f.write(response.content)
 
-# Muat model similarity
+# Load cosine_similarity
 with open("similarity.pkl", "rb") as f:
     similarity_model = joblib.load(f)
     
